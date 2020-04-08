@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>后台管理</title>
+        <link rel="stylesheet" th:href="@{/lib/layui/css/layui.css}">
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+	</head>
+    <body class="login-bg">
+        <div class="login layui-anim layui-anim-up">
+            <div class="message">后台管理</div>
+            <div id="darkbannerwrap"></div>
+            <form method="post" class="layui-form" >
+                <input type="text" name="username" placeholder="用户名" lay-verify="required" class="layui-input">
+                <hr class="hr15">
+                <input type="password" name="password" placeholder="密码" lay-verify="required" class="layui-input">
+                <hr class="hr15">
+                <input type="text" name="verifis" placeholder="验证码" lay-verify="required" class="layui-input" style="width: 200px;">
+                <img id="verifi_images" src="" style="width: 135px;height: 50px;float: left;position: relative;top: -50px;left: 204px;">
+                <input value="登录" lay-submit lay-filter="login" type="submit">
+                <hr class="hr10" >
+            </form>
+        </div>
+    </body>
+    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{/lib/layui/layui.js}"></script>
+    <script th:src="@{/js/login.js}"></script>
+</html>
