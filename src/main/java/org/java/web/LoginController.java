@@ -17,11 +17,11 @@ public class LoginController {
         if (!StringUtils.isEmpty(err)){
             //用户名不存在UnknownAccountException
             if (err.endsWith("UnknownAccountException")){
-                throw new Exception("用户名不存在");
+//                throw new Exception("用户名不存在");
             }
             //用户信息错误IncorrectCredentialsException
             if (err.endsWith("IncorrectCredentialsException")){
-                throw new Exception("密码错误");
+//                throw new Exception("密码错误");
             }
         }
 

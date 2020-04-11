@@ -19,7 +19,8 @@
 				<ul class="layui-nav layui-layout-right">
 					<li class="layui-nav-item">
 						<a href="javascript:;">
-							<img src="images/logins.png" class="layui-nav-img">小龙猫
+							<img src="images/logins.png" class="layui-nav-img">
+							<span th:text="${session.userInfo.getUsername()}"/>
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;">基本资料</a></dd>

@@ -14,7 +14,19 @@ $(function  () {
             // if(data.field.verifis.length < 5){
             //     layer.msg("验证码最少为5位数",{icon:2,time:1000});return false;
             // }
-            return true;
+            // $.ajax({
+            //     url:"/login",
+            //     type:"Post",
+            //     data:$("#fo").serialize(),
+            //     dataType:"json",
+            //     success:function(data){
+            //        if (data.code===0){
+            //            alert(data.err);
+            //        }else{
+            //            // $.get("/");
+            //        }
+            //     }
+            // });
         });
     });
 })

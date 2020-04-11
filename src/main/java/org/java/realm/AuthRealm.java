@@ -7,8 +7,15 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.java.entity.Userinfo;
+import org.java.service.UserInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class AuthRealm extends AuthorizingRealm {
+
+    @Autowired
+    private UserInfoService userInfoService;
+
     /**
      * 授权
      * @param principalCollection
@@ -30,14 +37,14 @@ public class AuthRealm extends AuthorizingRealm {
 
         String principal = (String) token.getPrincipal();
 
-        if (principal.equals("jack")){
+        Userinfo userInfo = userInfoService.login(principal);
+
+        if (userInfo==null){
             return null;
         }
 
-
-        String pwd = "123";
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal,pwd,"myRealm");
-
+        String pwd = userInfo.getPassword();
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userInfo,pwd,"myRealm");
         return info;
     }
 }
