@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.DepartinfoMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Departinfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="DepartId" jdbcType="INTEGER" property="departid" />
+    <result column="DepartName" jdbcType="VARCHAR" property="departname" />
+    <result column="PrincipalUser" jdbcType="VARCHAR" property="principaluser" />
+    <result column="ConnectTelNo" jdbcType="VARCHAR" property="connecttelno" />
+    <result column="ConnectMobileTelNo" jdbcType="VARCHAR" property="connectmobiletelno" />
+    <result column="Faxes" jdbcType="VARCHAR" property="faxes" />
+    <result column="BranchId" jdbcType="INTEGER" property="branchid" />
+  </resultMap>
+</mapper>

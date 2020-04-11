@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.UserstateMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Userstate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="UserStateId" jdbcType="INTEGER" property="userstateid" />
+    <result column="UserStateName" jdbcType="VARCHAR" property="userstatename" />
+  </resultMap>
+</mapper>

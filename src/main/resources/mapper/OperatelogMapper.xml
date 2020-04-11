@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.OperatelogMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Operatelog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="OperateId" jdbcType="INTEGER" property="operateid" />
+    <result column="UserId" jdbcType="VARCHAR" property="userid" />
+    <result column="OperateName" jdbcType="VARCHAR" property="operatename" />
+    <result column="ObjectId" jdbcType="VARCHAR" property="objectid" />
+    <result column="OperateDesc" jdbcType="VARCHAR" property="operatedesc" />
+    <result column="OperateTime" jdbcType="TIMESTAMP" property="operatetime" />
+  </resultMap>
+</mapper>

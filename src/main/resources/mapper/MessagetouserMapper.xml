@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.MessagetouserMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Messagetouser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="MessageId" jdbcType="INTEGER" property="messageid" />
+    <result column="ToUserId" jdbcType="VARCHAR" property="touserid" />
+    <result column="IfRead" jdbcType="INTEGER" property="ifread" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.ScheduleMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Schedule">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ScheduleId" jdbcType="INTEGER" property="scheduleid" />
+    <result column="Title" jdbcType="VARCHAR" property="title" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="MeetingId" jdbcType="INTEGER" property="meetingid" />
+    <result column="BeginTime" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="EndTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="SchContent" jdbcType="VARCHAR" property="schcontent" />
+    <result column="CreateUser" jdbcType="VARCHAR" property="createuser" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="IfPrivate" jdbcType="INTEGER" property="ifprivate" />
+  </resultMap>
+</mapper>

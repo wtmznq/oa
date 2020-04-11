@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.UserinfoMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Userinfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="UserId" jdbcType="VARCHAR" property="userid" />
+    <result column="UserName" jdbcType="VARCHAR" property="username" />
+    <result column="PassWord" jdbcType="VARCHAR" property="password" />
+    <result column="DepartId" jdbcType="INTEGER" property="departid" />
+    <result column="Gender" jdbcType="INTEGER" property="gender" />
+    <result column="RoleId" jdbcType="INTEGER" property="roleid" />
+    <result column="UserState" jdbcType="INTEGER" property="userstate" />
+  </resultMap>
+
+  <select id="findUserinfoByName" resultType="org.java.entity.Userinfo">
+    select * from UserInfo where UserName=#{userName}
+  </select>
+</mapper>

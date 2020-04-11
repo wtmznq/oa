@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.MessageMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Message">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="MessageId" jdbcType="INTEGER" property="messageid" />
+    <result column="Title" jdbcType="VARCHAR" property="title" />
+    <result column="Content" jdbcType="VARCHAR" property="content" />
+    <result column="Type" jdbcType="INTEGER" property="type" />
+    <result column="BeginTime" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="EndTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="FromUserId" jdbcType="VARCHAR" property="fromuserid" />
+    <result column="IfPublish" jdbcType="INTEGER" property="ifpublish" />
+    <result column="RecordTime" jdbcType="TIMESTAMP" property="recordtime" />
+  </resultMap>
+</mapper>

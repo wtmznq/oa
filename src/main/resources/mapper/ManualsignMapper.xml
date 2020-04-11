@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.ManualsignMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Manualsign">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="SignId" jdbcType="INTEGER" property="signid" />
+    <result column="UserId" jdbcType="VARCHAR" property="userid" />
+    <result column="SignTime" jdbcType="TIMESTAMP" property="signtime" />
+    <result column="SignDesc" jdbcType="VARCHAR" property="signdesc" />
+    <result column="SignTag" jdbcType="INTEGER" property="signtag" />
+  </resultMap>
+</mapper>

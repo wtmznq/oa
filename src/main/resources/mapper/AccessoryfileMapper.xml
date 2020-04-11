@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.AccessoryfileMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Accessoryfile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="AccessoryId" jdbcType="INTEGER" property="accessoryid" />
+    <result column="FileId" jdbcType="INTEGER" property="fileid" />
+    <result column="AccessoryName" jdbcType="VARCHAR" property="accessoryname" />
+    <result column="AccessorySize" jdbcType="INTEGER" property="accessorysize" />
+    <result column="AccessoryType" jdbcType="INTEGER" property="accessorytype" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="AccessoryPath" jdbcType="VARCHAR" property="accessorypath" />
+  </resultMap>
+</mapper>

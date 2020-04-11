@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.MynoteMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Mynote">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="NoteId" jdbcType="INTEGER" property="noteid" />
+    <result column="NoteTitle" jdbcType="VARCHAR" property="notetitle" />
+    <result column="NoteContent" jdbcType="VARCHAR" property="notecontent" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="CreateUser" jdbcType="VARCHAR" property="createuser" />
+  </resultMap>
+</mapper>

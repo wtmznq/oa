@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.java.dao.FileinfoMapper">
+  <resultMap id="BaseResultMap" type="org.java.entity.Fileinfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="FileId" jdbcType="INTEGER" property="fileid" />
+    <result column="FileName" jdbcType="VARCHAR" property="filename" />
+    <result column="FileType" jdbcType="INTEGER" property="filetype" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
+    <result column="FileOwner" jdbcType="VARCHAR" property="fileowner" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="ParentId" jdbcType="INTEGER" property="parentid" />
+    <result column="FilePath" jdbcType="VARCHAR" property="filepath" />
+    <result column="IfDelete" jdbcType="INTEGER" property="ifdelete" />
+  </resultMap>
+</mapper>
