@@ -18,10 +18,12 @@ public class LoginController {
             //用户名不存在UnknownAccountException
             if (err.endsWith("UnknownAccountException")){
 //                throw new Exception("用户名不存在");
+                System.out.println("用户名不存在");
             }
             //用户信息错误IncorrectCredentialsException
             if (err.endsWith("IncorrectCredentialsException")){
 //                throw new Exception("密码错误");
+                System.out.println("密码错误");
             }
         }
 

@@ -1,13 +1,23 @@
 package org.java.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import tk.mybatis.mapper.annotation.KeySql;
+
 import java.util.Date;
 import javax.persistence.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "LoginLog")
 public class Loginlog {
     /**
      * 登录日志id
      */
     @Id
+    @KeySql(useGeneratedKeys = true)
     @Column(name = "LoginId")
     private Integer loginid;
 

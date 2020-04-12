@@ -11,4 +11,19 @@
     <result column="DisplayOrder" jdbcType="INTEGER" property="displayorder" />
     <result column="ParentNodeId" jdbcType="INTEGER" property="parentnodeid" />
   </resultMap>
+
+  <select id="findSysfunByUserName" resultType="sysfun">
+    SELECT *
+      FROM
+          SysFun
+      WHERE
+        NodeId IN (
+          SELECT
+              NodeId
+          FROM
+              RoleRight
+          WHERE
+          RoleId = ( SELECT RoleId FROM UserInfo WHERE UserName = #{userName} )
+        )
+  </select>
 </mapper>

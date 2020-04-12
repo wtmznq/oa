@@ -34,30 +34,28 @@
 			<div class="layui-side layui-bg-black">
 				<div class="layui-side-scroll" id="layui_nav_left_1">
 					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-					<ul class="layui-nav layui-nav-tree"  lay-filter="test">
-						<li class="layui-nav-item layui-nav-itemed">
-							<a class="" href="javascript:;">网站设置</a>
+					<ul th:each="menu : ${session.menus}" th:if="${menu.parentnodeid==-1}" class="layui-nav layui-nav-tree"  lay-filter="test">
+						<li class="layui-nav-item">
+							<a class="" href="javascript:;" th:text="${menu.getDisplayname()}"></a>
 							<dl class="layui-nav-child">
-								<dd><a href="javascript:;" data-url="set-basic.html">基本设置</a></dd>
-								<dd><a href="javascript:;" data-url="set-upload.html">上传设置</a></dd>
-								<dd><a href="javascript:;" data-url="set-watermark.html">水印设置</a></dd>
+								<dd th:each="menu2 : ${session.menus}" th:if="${menu2.getParentnodeid() == menu.getNodeid()}"><a href="javascript:;" data-url="admin-list.html" th:text="${menu2.getDisplayname()}"></a></dd>
 							</dl>
 						</li>
-						<li class="layui-nav-item layui-nav-itemed">
-							<a href="javascript:;">管理员设置</a>
-							<dl class="layui-nav-child">
-								<dd><a href="javascript:;" data-url="admin-list.html">管理员列表</a></dd>
-								<dd><a href="javascript:;" data-url="role-list.html">角色列表</a></dd>
-								<dd><a href="javascript:;" data-url="auth-list.html">权限列表</a></dd>
-							</dl>
-						</li>
-						<li class="layui-nav-item layui-nav-itemed">
-							<a href="javascript:;">其他设置</a>
-							<dl class="layui-nav-child">
-								<dd><a href="javascript:;" data-url="enclosure-list.html">附件列表</a></dd>
-								<dd><a href="javascript:;" data-url="cache.html">清空缓存</a></dd>
-							</dl>
-						</li>
+						<!--<li class="layui-nav-item layui-nav-itemed">-->
+							<!--<a href="javascript:;">管理员设置</a>-->
+							<!--<dl class="layui-nav-child">-->
+								<!--<dd><a href="javascript:;" data-url="admin-list.html">管理员列表</a></dd>-->
+								<!--<dd><a href="javascript:;" data-url="role-list.html">角色列表</a></dd>-->
+								<!--<dd><a href="javascript:;" data-url="auth-list.html">权限列表</a></dd>-->
+							<!--</dl>-->
+						<!--</li>-->
+						<!--<li class="layui-nav-item layui-nav-itemed">-->
+							<!--<a href="javascript:;">其他设置</a>-->
+							<!--<dl class="layui-nav-child">-->
+								<!--<dd><a href="javascript:;" data-url="enclosure-list.html">附件列表</a></dd>-->
+								<!--<dd><a href="javascript:;" data-url="cache.html">清空缓存</a></dd>-->
+							<!--</dl>-->
+						<!--</li>-->
 					</ul>
 				</div>
 				<div class="layui-side-scroll" id="layui_nav_left_2">
