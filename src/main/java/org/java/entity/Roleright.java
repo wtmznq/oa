@@ -1,7 +1,7 @@
 package org.java.entity;
 
 import javax.persistence.*;
-
+@Table(name = "RoleRight")
 public class Roleright {
     /**
      * 角色权限id

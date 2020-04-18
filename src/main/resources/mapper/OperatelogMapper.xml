@@ -12,4 +12,24 @@
     <result column="OperateDesc" jdbcType="VARCHAR" property="operatedesc" />
     <result column="OperateTime" jdbcType="TIMESTAMP" property="operatetime" />
   </resultMap>
+
+  <select id="findLog" parameterType="map" resultType="map">
+    SELECT
+        OperateLog.OperateId operateId,
+        UserInfo.UserName userName,
+        OperateLog.OperateName operateName,
+        OperateLog.OperateDesc operateDesc,
+        OperateLog.OperateTime  operateTime
+    FROM
+        OperateLog,
+        UserInfo
+    WHERE
+        OperateLog.UserId = UserInfo.UserId
+        <if test="param.startTime!=null and param.startTime!=''">
+          and OperateLog.OperateTime >=  #{param.startTime}
+        </if>
+        <if test="param.endTime!=null and param.endTime!=''">
+          and OperateLog.OperateTime &lt;=  #{param.endTime}
+        </if>
+  </select>
 </mapper>

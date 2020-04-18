@@ -14,7 +14,7 @@
     <result column="UserState" jdbcType="INTEGER" property="userstate" />
   </resultMap>
 
-  <select id="findUserinfoByName" resultType="org.java.entity.Userinfo">
+  <select id="findUserinfoByName" resultType="userinfo">
     select * from UserInfo where UserName=#{userName}
   </select>
 </mapper>

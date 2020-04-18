@@ -1,7 +1,7 @@
 package org.java.entity;
 
 import javax.persistence.*;
-
+@Table(name = "SysFun")
 public class Sysfun {
     /**
      * 菜单节点id

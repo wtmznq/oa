@@ -34,11 +34,11 @@
 			<div class="layui-side layui-bg-black">
 				<div class="layui-side-scroll" id="layui_nav_left_1">
 					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-					<ul th:each="menu : ${session.menus}" th:if="${menu.parentnodeid==-1}" class="layui-nav layui-nav-tree"  lay-filter="test">
+					<ul th:each="menu : ${session.menus}" th:if="${menu.parentnodeid==0}" class="layui-nav layui-nav-tree"  lay-filter="test">
 						<li class="layui-nav-item">
 							<a class="" href="javascript:;" th:text="${menu.getDisplayname()}"></a>
 							<dl class="layui-nav-child">
-								<dd th:each="menu2 : ${session.menus}" th:if="${menu2.getParentnodeid() == menu.getNodeid()}"><a href="javascript:;" data-url="admin-list.html" th:text="${menu2.getDisplayname()}"></a></dd>
+								<dd th:each="menu2 : ${session.menus}" th:if="${menu2.getParentnodeid() == menu.getNodeid()}"><a th:href="${menu2.getNodeurl()}" target="right" th:text="${menu2.getDisplayname()}"></a></dd>
 							</dl>
 						</li>
 						<!--<li class="layui-nav-item layui-nav-itemed">-->
@@ -73,7 +73,7 @@
 			</div>
 			<div class="layui-body" id="LAY_app_body">
 				<div class="layui-tabsbody-item layui-show">
-					<iframe src="console.html" frameborder="0" class="layui-iframe" style="padding: 15px;"></iframe>
+					<iframe name="right" src="console.html" frameborder="0" class="layui-iframe" style="padding: 15px;"></iframe>
 				</div>
 			</div>
 			<div class="layui-footer">

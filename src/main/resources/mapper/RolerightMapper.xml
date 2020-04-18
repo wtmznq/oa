@@ -9,4 +9,12 @@
     <result column="RoleId" jdbcType="INTEGER" property="roleid" />
     <result column="NodeId" jdbcType="INTEGER" property="nodeid" />
   </resultMap>
+
+  <select id="findByRoleId" resultType="roleright">
+     SELECT NodeId FROM RoleRight WHERE RoleId = #{roleid}
+  </select>
+
+  <delete id="delByRoleId">
+    delete from RoleRight where RoleId = #{roleid}
+  </delete>
 </mapper>

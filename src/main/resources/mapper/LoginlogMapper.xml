@@ -12,4 +12,25 @@
     <result column="LoginUserIp" jdbcType="VARCHAR" property="loginuserip" />
     <result column="LoginDesc" jdbcType="VARCHAR" property="logindesc" />
   </resultMap>
+
+  <select id="findLog"  resultType="map">
+      SELECT
+          LoginLog.LoginId loginId,
+          UserInfo.UserName userName,
+          LoginLog.LoginTime loginTime,
+          LoginLog.LoginUserIp loginUserIp,
+          LoginLog.IfSuccess ifSuccess,
+          LoginLog.LoginDesc loginDesc
+      FROM
+          LoginLog,
+          UserInfo
+      WHERE
+          LoginLog.UserId = UserInfo.UserId
+              <if test="param.startTime!=null and param.startTime!=''">
+                  and LoginLog.LoginTime >= #{param.startTime}
+              </if>
+              <if test="param.endTime!=null and param.endTime!=''">
+                  and LoginLog.LoginTime 	&lt;= #{param.endTime}
+              </if>
+  </select>
 </mapper>

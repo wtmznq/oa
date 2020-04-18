@@ -2,7 +2,7 @@ package org.java.entity;
 
 import java.util.Date;
 import javax.persistence.*;
-
+@Table(name = "LoginLog")
 public class Operatelog {
     /**
      * 操作日志Id

@@ -10,6 +10,7 @@ import org.java.service.SysfunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
 import java.net.Inet4Address;
@@ -30,20 +31,27 @@ public class FirstController {
     public String first(HttpSession session) throws UnknownHostException {
         System.out.println("-----进入控制器first------------");
         Userinfo userinfo = (Userinfo) SecurityUtils.getSubject().getPrincipal();
+        if (session.getAttribute("userInfo")==null){
+            InetAddress ip4 = Inet4Address.getLocalHost();
+            Loginlog loginlog = new Loginlog();
+            loginlog.setLoginid(null);
+            loginlog.setUserid(userinfo.getUserid());
+            loginlog.setLogintime(new Date());
+            loginlog.setIfsuccess(1);
+            loginlog.setLoginuserip(ip4.toString());
+            loginlog.setLogindesc("成功登录");
+            loginLogService.addLog(loginlog);
+        }
         session.setAttribute("userInfo",userinfo);
-        InetAddress ip4 = Inet4Address.getLocalHost();
-        Loginlog loginlog = new Loginlog();
-        loginlog.setLoginid(null);
-        loginlog.setUserid(userinfo.getUserid());
-        loginlog.setLogintime(new Date());
-        loginlog.setIfsuccess(1);
-        loginlog.setLoginuserip(ip4.toString());
-        loginlog.setLogindesc(null);
-        loginLogService.addLog(loginlog);
+
 
         List<Sysfun> menus = sysfunService.loadSysfun(userinfo.getUsername());
         session.setAttribute("menus",menus);
         return "/main";
     }
 
+    @GetMapping("skip/{name}")
+    public String skip(@PathVariable("name") String name){
+        return "/"+name;
+    }
 }

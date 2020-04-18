@@ -24,6 +24,6 @@
               RoleRight
           WHERE
           RoleId = ( SELECT RoleId FROM UserInfo WHERE UserName = #{userName} )
-        )
+        ) ORDER BY ParentNodeId,DisplayOrder
   </select>
 </mapper>

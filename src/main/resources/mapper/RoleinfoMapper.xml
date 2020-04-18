@@ -9,4 +9,9 @@
     <result column="RoleName" jdbcType="VARCHAR" property="rolename" />
     <result column="RoleDesc" jdbcType="VARCHAR" property="roledesc" />
   </resultMap>
+
+
+  <select id="findAll" resultType="roleinfo">
+    SELECT * FROM RoleInfo where 1=1
+  </select>
 </mapper>

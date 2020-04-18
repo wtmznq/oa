@@ -17,7 +17,6 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public Userinfo login(String userName) {
         Userinfo userinfo = userInfoMapper.findUserinfoByName(userName);
-        System.out.println(userinfo.toString());
         return userinfo;
     }
 }

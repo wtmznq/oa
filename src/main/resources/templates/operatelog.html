@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>操作日志</title>
+    <link rel="stylesheet" th:href="@{/lib/layui/css/layui.css}"  media="all">
+</head>
+<body>
+<form action="" id="myForm">
+    <div align="center" class="layui-form ">
+        <div class="layui-form-item">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+                <input id="startTime" autocomplete="off" type="text" class="layui-input" name="startTime">
+            </div>
+            <label class="layui-form-label">----------</label>
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input id="endTime" type="text" autocomplete="off" class="layui-input" name="endTime">
+            </div>
+            <div class="layui-input-inline">
+                <button lay-filter="search" class="layui-btn" lay-submit>搜索</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<!--  数据表格-->
+<table lay-filter="myTable" id="myTable"></table>
+
+<!--    头部工具栏-->
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除选中</button>
+    </div>
+</script>
+
+
+<script th:src="@{/lib/layui/layui.js}"></script>
+<script th:src="@{/js/operatelog.js}"></script>
+</body>
+</html>

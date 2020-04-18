@@ -1,12 +1,23 @@
 package org.java.entity;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import tk.mybatis.mapper.annotation.KeySql;
 
+import javax.persistence.*;
+@Table(name = "RoleInfo")
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Roleinfo {
     /**
      * 角色id
      */
     @Id
+    @KeySql(useGeneratedKeys = true)
     @Column(name = "RoleId")
     private Integer roleid;
 

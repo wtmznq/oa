@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/lib/layui/css/layui.css}"  media="all">
+  <link rel="stylesheet" th:href="@{/lib/layui_ext/dtree/dtree.css}">
+  <link rel="stylesheet" th:href="@{/lib/layui_ext/dtree/font/dtreefont.css}">
+</head>
+<body>
+  <!--搜索栏-->
+  <div align="center"  class="layui-form layui-form-pane">
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+          <input type="text" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+          <input type="button" class="layui-btn" value="搜索">
+      </div>
+      <div class="layui-inline">
+        <input id="add" type="button" class="layui-btn layui-btn-normal" value="添加">
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!--  数据表格-->
+  <table lay-filter="myTable" id="myTable"></table>
+  <script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="allocation">分配角色权限</a>
+  </script>
+
+<!--  权限树-->
+  <div id="myTree" style="overflow: auto;display: none">
+    <ul id="dataTree" class="dtree" data-id="0"></ul>
+  </div>
+
+  <script th:src="@{/lib/layui/layui.js}"></script>
+  <script th:src="@{/js/roleManage.js}"></script>
+</body>
+</html>
